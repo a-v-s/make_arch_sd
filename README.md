@@ -45,6 +45,7 @@ Packages:
 * qemu-user-static
 * qemu-user-static-binfmt
 
+A thanks to @sehraf. Their project builds ArchLinux RISCV sd cards for the Nezha board. This was the inspiration to start a project for building sd cards for various boards, as the official ArchLinux ARM SD card creation is a manual process. 
 
 
 
