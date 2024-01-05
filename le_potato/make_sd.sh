@@ -65,13 +65,12 @@ else
 	fi
 fi
 
-sudo umount root
-rm -rf root boot 
-
-
 # as downloading may take a while, the user might not be watching all the time
 # and sudo might time out, thus we ask for an Enter to continue
 read -p "Press Enter to continue"
+
+sudo umount root
+rm -rf root boot 
 
 set -e 
 
@@ -100,6 +99,11 @@ read -p "Press Enter to continue"
 sudo cp configure_target.sh root
 sudo chmod +x root/configure_target.sh
 sudo arch-chroot root /configure_target.sh
+
+# as updating takes a while, the user might not be watching all the time
+# and sudo might time out, thus we ask for an Enter to continue
+read -p "Press Enter to continue"
+
 sudo rm root/configure_target.sh
 
 # generate UUID based fstab, so we don't need to differentiate between pi models
